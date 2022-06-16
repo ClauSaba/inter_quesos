@@ -1,0 +1,10 @@
+#Carrito{
+    width: 20vw;
+}
+
+.botonesCarrito{
+    font-size: 3vw;
+    margin: 0 2vw;
+    color: gold;
+    background-color: black;
+}

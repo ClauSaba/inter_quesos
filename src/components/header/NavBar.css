@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+*{
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+
+#NavBarBuscador{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40vw;
+    margin-top: 7vh;
+}
+
+#MenuPrincipal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    margin-top: 4vh;
+}
+
+.MenuCategorias{
+    font-size: 1.8vw;
+    font-family: 'Indie Flower', cursive;
+    color: gold;
+}
