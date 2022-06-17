@@ -1,13 +1,33 @@
-.App {
-  text-align: center;
+.App{
+  background-color: rgb(77, 77, 77);
+  width: 100vw;
+  height: auto;
 }
 
-.AppHeader {
+.AppHeader , .AppMain, .AppFooter {
+  text-align: center;
+  max-width: 1440px;
+  margin: auto;
+  
+}
+
+.AppHeader ,.AppFooter{
   background-color: black;
   min-height: 20vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: white;
+}
+
+.AppMain{
+  background-color: rgb(25, 25, 25);
+  padding: 5vh 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
 }

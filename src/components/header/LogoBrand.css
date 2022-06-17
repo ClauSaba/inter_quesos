@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 5vw;
 }
 
 .imgLogo{
@@ -14,5 +15,9 @@
 
 .brand{
     font-family: 'Satisfy', cursive;
-    
+    font-size: 1.3vw;
+}
+
+.ImgBuscador{
+    background-color: gold;
 }

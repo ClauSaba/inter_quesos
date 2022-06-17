@@ -5,7 +5,7 @@ function LogoBrand(){
   return(
     <div id="LogoBrand">
       <img className="imgLogo" src={ImgLogo} alt="Logo La Internacional" />
-      <h2 className="brand">La Internacional</h2>
+      <h2 className="brand">La Europea</h2>
     </div>
   );
 }
