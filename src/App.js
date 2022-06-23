@@ -13,14 +13,7 @@ function App() {
         <Carrito/>
       </header>
       <main className='AppMain'>
-        <ItemListContainer/>
-        <ItemListContainer/>
-        <ItemListContainer/>
-        <ItemListContainer/>
-        <ItemListContainer/>
-        <ItemListContainer/>
-        
-
+        <ItemListContainer greeting="Bienvenidos a La Europea"  />   
 
       </main>
       <footer className='AppFooter'>

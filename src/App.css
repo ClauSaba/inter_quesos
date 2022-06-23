@@ -31,3 +31,14 @@
   align-content: center;
   justify-items: center;
 }
+
+.greeting{
+  width: 100vw;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  margin: auto;
+  
+  
+
+}
