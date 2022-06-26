@@ -24,12 +24,8 @@
 .AppMain{
   background-color: rgb(25, 25, 25);
   padding: 5vh 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting{
