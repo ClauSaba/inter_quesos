@@ -3,7 +3,6 @@ import LogoBrand from './components/header/LogoBrand';
 import NavBar from './components/header/NavBar';
 import Carrito from './components/header/Carrito';
 import ItemListContainer from './components/main/ItemListContainer';
-import Cards from './components/main/Cards';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
         <Carrito/>
       </header>
       <main className='AppMain'>
-        <ItemListContainer greeting="Bienvenidos a La Europea"  />   
-        <Cards/>
+        <ItemListContainer greeting="Bienvenidos a La Europea fromagerie"  />   
         
       </main>
       <footer className='AppFooter'>
