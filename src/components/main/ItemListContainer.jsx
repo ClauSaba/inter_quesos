@@ -18,7 +18,7 @@ function ItemListContainer({greeting}){
 		.finally(()=>SetLoading(false))
 	},[])
 
-  return(
+	return(
 		<>
       <h1 className="greeting">{greeting}</h1>   
 			{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemList	productList={productList} /> }     

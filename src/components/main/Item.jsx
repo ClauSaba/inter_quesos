@@ -26,16 +26,20 @@ const Item = ( {item} ) => {
 	const btnCantidadResta = (valor) => {
 		setCantidad(cantidad + valor)
 	}
+
+	const btnAgregaCantidad = () => {
+
+	}
 	
   return (
     <div className="Cartas" key={codigo}>
       <img className="FotoProducto" src={foto} alt= {nombre} />    
       <p className="nombrePrecio"> {nombre} - ${precio} </p>
       <div className='cantidadAgregar'>
-        <button className='btnResta' onClick={()=>btnCantidadResta(cantidad==1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></button>
-        <span className='muestraCantidad'>{cantidad}</span>
-        <button className='btnSuma' onClick={()=>btnCantidadSuma((cantidad==stock ? 0 : +1))}><FontAwesomeIcon icon={faCirclePlus} /></button>
-        <button className='btnAgrega'><FontAwesomeIcon icon={faCartPlus} /> </button>
+        <span className='btnResta' onClick={()=>btnCantidadResta(cantidad==1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></span>
+        <label className='muestraCantidad'>{cantidad}</label>
+        <span className='btnSuma' onClick={()=>btnCantidadSuma((cantidad==stock ? 0 : +1))}><FontAwesomeIcon icon={faCirclePlus} /></span>
+        <span className='btnAgrega' onClick={()=>btnAgregaCantidad()}><FontAwesomeIcon icon={faCartPlus} /> </span>
 			</div>
 			<h6 className="banderas"><img src={bandera} alt={origen} className="imagenBandera" />  {origen}  <img src={bandera} alt={origen} className="imagenBandera" /></h6>
     </div>
