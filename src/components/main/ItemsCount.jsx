@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import "./ItemsCount.css"
 import	swal	from "sweetalert"
 
-const ItemsCount = ( {nombre, foto, precio, stock} ) => {
-	const [cantidad, setCantidad] = useState(1);
+const ItemsCount = ( {nombre, foto, precio, stock, initial, onAdd} ) => {
+	const [cantidad, setCantidad] = useState(initial);
 
 	const btnCantidadSuma = (valor) => {
 		setCantidad(cantidad + valor)
@@ -18,6 +18,10 @@ const ItemsCount = ( {nombre, foto, precio, stock} ) => {
 	const btnCantidadResta = (valor) => {
 		setCantidad(cantidad + valor)
 	}
+	const btnAgregaCarrito = ()=>{
+		onAdd(cantidad, nombre)
+	}
+
 	
   return (
     <div className='contenedorCartas'>
@@ -28,7 +32,7 @@ const ItemsCount = ( {nombre, foto, precio, stock} ) => {
           <button onClick={()=>btnCantidadResta(cantidad==1 ? 0 : -1)}>-</button>
           <p>{cantidad}</p>
           <button onClick={()=>btnCantidadSuma((cantidad==stock ? 0 : +1))}>+</button>
-          <button>Agregar </button>
+          <button onClick={()=>btnAgregaCarrito()}>Agregar </button>
 				</div>
       </div>
 		</div>	
