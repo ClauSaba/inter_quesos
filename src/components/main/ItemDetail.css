@@ -1,0 +1,98 @@
+.detalleProducto{
+    background-color: black;
+    border: 3px solid wheat;
+    width: 65vw;
+    margin: auto;
+    display: flex;
+}
+.detalleProductoIzq{
+    width: 50%;
+    margin: 2vw;
+
+
+}
+.banderaEncabezado{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 5vh;
+    margin-left: 3vw;
+
+}
+
+.banderaDetail{
+    width: 3vw;
+    margin-right: 2vw;
+    
+
+}
+.origenBandera{
+    font-size: 2vw;
+    font-style: italic;
+    font-weight: 300;
+    color: whitesmoke;
+    
+}
+.imagenProducto{
+    width: 30vw;
+    height: 50vh;
+
+}
+.detalleProductoDerecha{
+    width: 50%;
+    margin: 3vw;
+
+
+}
+.nombreProducto{
+    font-size: 5vw;
+    margin-bottom: 4vh;
+    font-family: 'Indie Flower', cursive;
+    color: gold;
+}
+.origenTipo{
+    list-style-type: circle;
+    margin: 1vw;
+    text-align: start;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: gold;
+
+}
+.descripcion{
+    text-align: justify;
+    font-size: 1.5vw;
+    margin-bottom: 3vh;
+    font-style: italic;
+    color: whitesmoke;
+
+}
+.precioProducto{
+    margin: 3vh;
+    font-size: 5vw;
+    font-weight: bolder;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Indie Flower', cursive;
+    color: whitesmoke;
+}
+
+.cantidadAgregarDetail{
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    align-items: center;
+    
+}
+.muestraCantidadDetail{
+    font-size: 3vw;
+    font-weight: bold;
+    color: gold;
+}
+.tituloAgregarCarrito{
+    margin-top: 8vh;
+    font-style: italic;
+    font-family: 'Indie Flower', cursive;
+    color: whitesmoke;
+    font-size: 2vw;
+    text-align: start;
+}

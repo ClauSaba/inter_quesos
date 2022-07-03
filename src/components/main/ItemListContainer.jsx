@@ -21,7 +21,7 @@ function ItemListContainer({greeting}){
 	return(
 		<>
       <h1 className="greeting">{greeting}</h1>   
-			{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemList	productList={productList} /> }     
+			{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemList productList={productList} /> }     
 			
 		</>
   )}

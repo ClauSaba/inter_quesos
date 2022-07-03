@@ -3,6 +3,8 @@ import LogoBrand from './components/header/LogoBrand';
 import NavBar from './components/header/NavBar';
 import Carrito from './components/header/Carrito';
 import ItemListContainer from './components/main/ItemListContainer';
+import ItemDetailContainer from './components/main/ItemDetailContainer';
+
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
         <Carrito/>
       </header>
       <main className='AppMain'>
-        <ItemListContainer greeting="Bienvenidos a La Europea fromagerie"  />   
-        
+        {/* { <ItemListContainer greeting="Bienvenidos a La Europea fromagerie"  /> }    */}
+        { <ItemDetailContainer seleccion="Aqui está tu seleccion: " /> }
       </main>
       <footer className='AppFooter'>
 

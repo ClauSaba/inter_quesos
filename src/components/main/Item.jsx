@@ -8,14 +8,14 @@ import {faCartPlus} from "@fortawesome/free-solid-svg-icons"
 
 
 <ItemsCount />
-const Item = ( {item} ) => {
+const Item = ( {item, onAdd, initial} ) => {
 	const {codigo, nombre, precio, stock, foto, origen, bandera} = item ;
 
-	const [cantidad, setCantidad] = useState(1);
+	const [cantidad, setCantidad] = useState(initial);
 
 	const btnCantidadSuma = (valor) => {
 		setCantidad(cantidad + valor)
-			cantidad == stock && swal({
+			cantidad === stock && swal({
 				title: 'No hay mas stock disponible',
 				text: `actualmente hay ${stock} unidades`,
 				icon: 'error',
@@ -28,7 +28,7 @@ const Item = ( {item} ) => {
 	}
 
 	const btnAgregaCantidad = () => {
-
+		onAdd(cantidad, nombre)
 	}
 	
   return (
@@ -36,11 +36,11 @@ const Item = ( {item} ) => {
       <img className="FotoProducto" src={foto} alt= {nombre} />    
       <p className="nombrePrecio"> {nombre} - ${precio} </p>
       <div className='cantidadAgregar'>
-        <span className='btnResta' onClick={()=>btnCantidadResta(cantidad==1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></span>
+        <span className='btnResta' onClick={()=>btnCantidadResta(cantidad===1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></span>
         <label className='muestraCantidad'>{cantidad}</label>
-        <span className='btnSuma' onClick={()=>btnCantidadSuma((cantidad==stock ? 0 : +1))}><FontAwesomeIcon icon={faCirclePlus} /></span>
+        <span className='btnSuma' onClick={()=>btnCantidadSuma((cantidad===stock ? 0 : +1))}><FontAwesomeIcon icon={faCirclePlus} /></span>
         <span className='btnAgrega' onClick={()=>btnAgregaCantidad()}><FontAwesomeIcon icon={faCartPlus} /> </span>
-			</div>
+	    </div>
 			<h6 className="banderas"><img src={bandera} alt={origen} className="imagenBandera" />  {origen}  <img src={bandera} alt={origen} className="imagenBandera" /></h6>
     </div>
   )
