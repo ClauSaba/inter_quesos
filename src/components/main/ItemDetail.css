@@ -35,7 +35,7 @@
 .imagenProducto{
     width: 30vw;
     height: 50vh;
-
+    margin: 5vh 0;
 }
 .detalleProductoDerecha{
     width: 50%;
@@ -79,12 +79,12 @@
 .cantidadAgregarDetail{
     display: flex;
     justify-content: center;
-    gap: 3vw;
+    gap: 15px;
     align-items: center;
     
 }
 .muestraCantidadDetail{
-    font-size: 3vw;
+    font-size: 20px;
     font-weight: bold;
     color: gold;
 }
@@ -95,4 +95,5 @@
     color: whitesmoke;
     font-size: 2vw;
     text-align: start;
+    margin-bottom: 2vh;
 }

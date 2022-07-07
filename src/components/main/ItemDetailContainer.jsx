@@ -13,7 +13,7 @@ import swal from 'sweetalert';
 function ItemDetailContainer({seleccion}){
 	const [itemDetail, SetItemDetail] = useState({})
 	const [loading, SetLoading] = useState(true)
-
+	
 	const {codigo} = useParams();
 
 	useEffect(()=>{

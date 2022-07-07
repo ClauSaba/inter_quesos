@@ -8,7 +8,7 @@ import ItemDetailContainer from './components/main/ItemDetailContainer';
 // import {SliderData} from "../src/components/mocks/Carrousel"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Footer from './components/footer/Footer';
-
+import Cart from "./components/main/Cart"
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             {/* {<Slider SliderData= {SliderData} />} */}
             <Route path='/category/:tipo' element= {<ItemListContainer seleccion="Aqui está tu selección: " /> }/>
             <Route path='/detalle/:codigo' element= {<ItemDetailContainer seleccion="Aqui está tu selección: " /> }/>
-            
+            <Route path='/cart' element= {<Cart/> }/>
         </Routes>
         </main>
         <footer className='AppFooter'>
