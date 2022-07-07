@@ -8,9 +8,9 @@ import "./ItemDetail.css"
 
 
 const ItemDetail = ({itemDetail, initial, onAdd}) => {
-	const {codigo, nombre, precio, stock, foto, origen, bandera, descripcion, tipo} = itemDetail ;
+	const {nombre, precio, stock, foto, origen, bandera, descripcion, tipo} = itemDetail ;
 
-  const [cantidad, setCantidad] = useState(initial);
+   const [cantidad, setCantidad] = useState(initial);
 
 	const btnCantidadSuma = (valor) => {
 		setCantidad(cantidad + valor)
@@ -22,6 +22,8 @@ const ItemDetail = ({itemDetail, initial, onAdd}) => {
 				timerProgressBar: true,
 			});	
 	}
+
+	
 	const btnCantidadResta = (valor) => {
 		setCantidad(cantidad + valor)
 	}
@@ -29,6 +31,7 @@ const ItemDetail = ({itemDetail, initial, onAdd}) => {
 	const btnAgregaCantidad = () => {
 		onAdd(cantidad, nombre)
 	}
+	
 
   return (
     <div className='detalleProducto '>
@@ -37,7 +40,8 @@ const ItemDetail = ({itemDetail, initial, onAdd}) => {
 					<img className='banderaDetail' src={bandera} alt={origen} />
 					<h6 className="origenBandera"> {origen} </h6>
 				</div>
-      <img className='imagenProducto' src={foto} alt={nombre} />
+				<img className='imagenProducto' src={foto} alt={nombre} />	
+      
 			<h2 className="precioProducto"> $ {precio}</h2> 
 			
 		</div>

@@ -1,29 +1,44 @@
 import  {useState, useEffect} from "react";
 import "./ItemListContainer.css"
-import {getData} from "../mocks/Productos"
+import {getProduct} from "../mocks/Productos"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRotate} from "@fortawesome/free-solid-svg-icons"
-import ItemDetailSelector from "./ItemDetailSeletor";
+import ItemDetail from './ItemDetail'
+import {useParams} from	 "react-router-dom"
+import swal from 'sweetalert';
+
 
 
 
 function ItemDetailContainer({seleccion}){
-	const [itemDetail, SetItemDetail] = useState([])
+	const [itemDetail, SetItemDetail] = useState({})
 	const [loading, SetLoading] = useState(true)
 
+	const {codigo} = useParams();
+
 	useEffect(()=>{
-		getData
+		SetLoading(true)
+		getProduct (codigo)
 		.then((res)=>(SetItemDetail(res)))
 		.catch("error")
 		.finally(()=>SetLoading(false))
-	},[])
+	},[codigo])
+
+	const onAdd = (cantidad, nombre) =>{
+		swal({
+				text: `Se agregaron  ${cantidad} unidades de ${nombre} al carrito`,
+				icon: 'success',
+				timer: 2000,
+			  timerProgressBar: true
+			});	
+	  }
 
 	return(
 		<>
-      <h1 className="greeting">{seleccion}</h1>   
-			{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemDetailSelector  itemDetail={itemDetail} /> }     
-			
+      <h1 className="greeting">{seleccion} </h1>  
+				{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemDetail  itemDetail={itemDetail} initial= {1} onAdd={onAdd} /> }     
 		</>
-  )}
+  	)
+}
     
-export default ItemDetailContainer;
+export default ItemDetailContainer

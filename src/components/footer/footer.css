@@ -1,0 +1,25 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10vw;
+    color: wheat;
+    background-color: black;
+    min-height: 20vh;
+    margin: auto  ;
+
+}
+
+.socialMediaLinks{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    gap: 3vw;
+
+    
+}
+
+.socialMediaLink li{
+    color: wheat;
+}

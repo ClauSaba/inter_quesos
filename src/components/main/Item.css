@@ -35,10 +35,11 @@
 }
 
 .nombrePrecio{
-    font-size: 20px;
+    font-size: 1.5vw;
     font-style: italic;
     font-weight: bold;
-    color: white;
+    font-family: 'Indie Flower', cursive;
+    color: gold;
     margin: 12px 0;
 }
 
@@ -47,7 +48,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .banderas img{
     height: 10px;

@@ -5,7 +5,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons"
 import {faCircleMinus} from "@fortawesome/free-solid-svg-icons"
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons"
-
+import "./Item.css"
+import { Link } from 'react-router-dom';
 
 <ItemsCount />
 const Item = ( {item, onAdd, initial} ) => {
@@ -32,8 +33,8 @@ const Item = ( {item, onAdd, initial} ) => {
 	}
 	
   return (
-    <div className="Cartas" key={codigo}>
-      <img className="FotoProducto" src={foto} alt= {nombre} />    
+    <div className="Cartas" key={codigo}  >
+      <Link to={`/detalle/${codigo}`}><img className="FotoProducto" src={foto} alt= {nombre} /></Link>      
       <p className="nombrePrecio"> {nombre} - ${precio} </p>
       <div className='cantidadAgregar'>
         <span className='btnResta' onClick={()=>btnCantidadResta(cantidad===1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></span>
@@ -41,7 +42,7 @@ const Item = ( {item, onAdd, initial} ) => {
         <span className='btnSuma' onClick={()=>btnCantidadSuma((cantidad===stock ? 0 : +1))}><FontAwesomeIcon icon={faCirclePlus} /></span>
         <span className='btnAgrega' onClick={()=>btnAgregaCantidad()}><FontAwesomeIcon icon={faCartPlus} /> </span>
 	    </div>
-			<h6 className="banderas"><img src={bandera} alt={origen} className="imagenBandera" />  {origen}  <img src={bandera} alt={origen} className="imagenBandera" /></h6>
+			<h6 className="banderas"><img src={bandera} alt={origen} className="imagenBandera"   />  {origen}  <img src={bandera} alt={origen} className="imagenBandera" /></h6>
     </div>
   )
 }

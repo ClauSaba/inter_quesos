@@ -18,7 +18,7 @@
   
 }
 
-.AppHeader ,.AppFooter{
+.AppHeader{
   background-color: black;
   min-height: 20vh;
   display: flex;
