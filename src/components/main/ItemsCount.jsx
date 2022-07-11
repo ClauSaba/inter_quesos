@@ -7,7 +7,6 @@ import {faCartPlus} from "@fortawesome/free-solid-svg-icons"
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
 
-
 const ItemsCount = ( { nombre, onAdd, initial, stock } ) => {
 	const [cantidad, setCantidad] = useState(initial);
 

@@ -4,15 +4,15 @@ import NavBar from './components/header/NavBar';
 import Carrito from './components/header/Carrito';
 import ItemListContainer from './components/main/ItemListContainer';
 import ItemDetailContainer from './components/main/ItemDetailContainer';
-// import Slider from "./components/Slider";
-// import {SliderData} from "../src/components/mocks/Carrousel"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Footer from './components/footer/Footer';
 import Cart from "./components/main/Cart"
+import CustomProvider from './context/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
+      <CustomProvider>
       <div className="App">
         <header className="AppHeader">
           <LogoBrand/>
@@ -21,7 +21,6 @@ function App() {
         </header>
         <main className='AppMain'>
         <Routes>
-          
             <Route path='/' element= {<ItemListContainer greeting="Bienvenidos a La Europea fromagerie"  /> }/>
             {/* {<Slider SliderData= {SliderData} />} */}
             <Route path='/category/:tipo' element= {<ItemListContainer seleccion="Aqui está tu selección: " /> }/>
@@ -33,6 +32,7 @@ function App() {
         <Footer />
         </footer>
       </div>
+      </CustomProvider>
     </BrowserRouter>
   );
 }

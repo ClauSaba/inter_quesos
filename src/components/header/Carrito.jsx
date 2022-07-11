@@ -1,13 +1,17 @@
 import "./Carrito.css"
+import { useContext } from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCartShopping ,faCircleUser} from "@fortawesome/free-solid-svg-icons";
+import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import { CartContext } from "../../context/CartContext";
 
 
-function Carrito(){
+const Carrito = () =>{
+  const {cantidad} = useContext(CartContext)
+
 return(
   <div id="Carrito">
-    <button className="botonesCarrito"><FontAwesomeIcon icon={faCircleUser} /></button>
-		<button className="botonesCarrito"><FontAwesomeIcon icon={faCartShopping} /></button>
+		<button className="botonesCarrito"><FontAwesomeIcon icon={faCartShopping} />  </button>
+    <span className="itemEnCarrito">{cantidad}</span>
   </div>
     );
   }

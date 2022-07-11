@@ -1,10 +1,20 @@
 #Carrito{
     width: 20vw;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .botonesCarrito{
-    font-size: 3vw;
+    font-size: 45px;
     margin: 0 1vw;
     color: gold;
     background-color: black;
+}
+
+.itemEnCarrito{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    
 }

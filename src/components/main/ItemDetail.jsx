@@ -1,11 +1,26 @@
 import "./ItemDetail.css"
 import ItemsCount from './ItemsCount';
+import	swal	from "sweetalert"
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
 
-const ItemDetail = ({itemDetail, onAdd}) => {
+const ItemDetail = ({itemDetail, product}) => {
 	const {nombre, precio, stock, foto, origen, bandera, descripcion, tipo} = itemDetail ;
 
-	
+	const {addProduct } = useContext(CartContext)
+
+  const onAdd = (cantidad, nombre) =>{
+    swal({
+			text: `Se agregaron  ${cantidad} unidades de ${nombre} al carrito`,
+			icon: 'success',
+			timer: 2000,
+		  timerProgressBar: true
+		});		
+    const productoConCantidad = {...product, cantidad: cantidad}
+
+    addProduct(productoConCantidad);
+  }
 
   	return (
     	<div className='detalleProducto '>
