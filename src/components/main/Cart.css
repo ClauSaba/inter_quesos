@@ -1,4 +1,72 @@
 .cart{
+    font-family: 'Indie Flower', cursive;
+    color: gold;
+    font-size: 20px;
+}
+
+.encabezadosTabla th{
     color: white;
-    font-size: 50px;
+}
+
+td{
+    color: wheat;
+}
+
+.mensajeTotal{
+    font-family: 'Indie Flower', cursive;
+    color: gold;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+    text-align: start;
+}
+
+.finalizaCompra{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+    gap: 30px;
+}
+
+.btnPagar{
+    width: 70px;
+    background-color: green;
+    color: white;
+}
+.btnVaciar{
+    width: 70px;
+    background-color: red;
+    color: white;
+}
+.blanco{
+    color: white;
+}
+
+.itemCarrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 960px;
+    height: 100px;
+    border: solid gold 1px;
+    margin: 10px auto;
+}
+.cartFoto{
+    height: 90px;
+    width: 100px;
+}
+.cartNombre, .cartPrecio, .cartCantidad, .cartTotal{
+    font-family: 'Indie Flower', cursive;
+    color: gold;
+    font-size: 30px;
+}
+.cartNombre{
+    font-weight: bold;
+}
+.cartEliminar{
+    color: red;
+    background-color: transparent;
+    font-size: 20px;
 }

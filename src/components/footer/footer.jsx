@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhone } from "@fortawesome/free-solid-svg-icons";
-import "./footer.css"
+import "./Footer.css"
 
 const Footer = () => {
 	return (
@@ -11,7 +11,7 @@ const Footer = () => {
         <h6>--- desarrollado por ClauSaba ---</h6>
       </div>
       <ul className="socialMediaLinks">
-        <li className ="btnFB"><a href="https://facebook.com" target="_blank"> FB </a></li>
+        <li className ="btnFB"><a href="https://facebook.com" target="_blank" > FB </a></li>
         <li className ="btnTW"><a href="https://twitter.com" target="_blank"> TW</a></li>
         <li className ="btnIG"><a href="https://instagram.com" target="_blank"> IG </a></li>
       </ul>

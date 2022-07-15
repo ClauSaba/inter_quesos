@@ -11,7 +11,7 @@ import swal from 'sweetalert';
 
 
 function ItemDetailContainer({seleccion}){
-	const [itemDetail, SetItemDetail] = useState({})
+	const [product, SetProduct] = useState({})
 	const [loading, SetLoading] = useState(true)
 	
 	const {codigo} = useParams();
@@ -19,7 +19,7 @@ function ItemDetailContainer({seleccion}){
 	useEffect(()=>{
 		SetLoading(true)
 		getProduct (codigo)
-		.then((res)=>(SetItemDetail(res)))
+		.then((res)=>(SetProduct(res)))
 		.catch("error")
 		.finally(()=>SetLoading(false))
 	},[codigo])
@@ -36,7 +36,7 @@ function ItemDetailContainer({seleccion}){
 	return(
 		<>
       <h1 className="greeting">{seleccion} </h1>  
-				{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemDetail  itemDetail={itemDetail} initial= {1} onAdd={onAdd} /> }     
+				{loading ? <div className="cargando"><FontAwesomeIcon icon={faRotate} />  Cargando selección...</div> :<ItemDetail  product={product} initial= {1} onAdd={onAdd} /> }     
 		</>
   	)
 }

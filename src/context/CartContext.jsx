@@ -28,28 +28,30 @@ const CustomProvider = ({ children }) => {
   }
 
   const deleteProduct = (codigo) =>{
-    const arrayFiltrado = products.filter(products.codigo !== codigo);
-    setProducts(arrayFiltrado)
-  }
+    const arrayItemBorrado = products.filter((item) => item.codigo !== codigo )
+    console.log(arrayItemBorrado);
+    console.log(codigo);
+    setProducts(arrayItemBorrado);
+    }
 
 
   const addProduct = (product) =>{
     if (isInCart(product.codigo)){
       const found = products.find(p => p.codigo === product.codigo)
       const index = products.indexOf(found)
+      console.log(index);
       const aux = [...products]
       aux[index].cantidad += product.cantidad
       setProducts(aux)
+      console.log(aux);
     }else{
       setProducts([...products, product])
     }
     getQtyProducts()
   } 
 
-
-
   return (
-    <Provider value={{ products, clear, isInCart, deleteProduct,getQtyProducts, cantidad,addProduct }}>
+    <Provider value={{ products, clear, isInCart, deleteProduct, getQtyProducts, cantidad, addProduct }}>
       {children}
     </Provider>
   )

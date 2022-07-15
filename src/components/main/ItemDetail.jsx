@@ -5,8 +5,8 @@ import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
 
 
-const ItemDetail = ({itemDetail, product}) => {
-	const {nombre, precio, stock, foto, origen, bandera, descripcion, tipo} = itemDetail ;
+const ItemDetail = ({product}) => {
+	const {nombre, precio, stock, foto, origen, bandera, descripcion, tipo} = product ;
 
 	const {addProduct } = useContext(CartContext)
 
@@ -40,7 +40,7 @@ const ItemDetail = ({itemDetail, product}) => {
 						<li className="origenTipo">Origen: {origen} </li>
 					</ul>
 				<h5 className="tituloAgregarCarrito">Agregá al carrito :  </h5>
-				<ItemsCount  initial= {1} onAdd={onAdd} itemDetail= {itemDetail} stock = {stock} nombre ={nombre}></ItemsCount>
+				<ItemsCount  initial= {1} onAdd={onAdd} product= {product} stock = {stock} nombre ={nombre}></ItemsCount>
 				</div>
     </div>
   )
