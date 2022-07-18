@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect }  from 'react'
+import Item from '../components/main/Item';
 
 
 export const CartContext = createContext();
@@ -28,12 +29,14 @@ const CustomProvider = ({ children }) => {
   }
 
   const deleteProduct = (codigo) =>{
-    const arrayItemBorrado = products.filter((item) => item.codigo !== codigo )
-    console.log(arrayItemBorrado);
-    console.log(codigo);
-    setProducts(arrayItemBorrado);
-    }
-
+    const found = products.find(p => p.codigo === codigo)
+    const index = products.indexOf(found)
+    console.log(index);
+    const aux = [...products]
+    aux.splice(index, 1)
+    setProducts(aux)
+    console.log(aux);
+  }
 
   const addProduct = (product) =>{
     if (isInCart(product.codigo)){
@@ -49,7 +52,7 @@ const CustomProvider = ({ children }) => {
     }
     getQtyProducts()
   } 
-
+  
   return (
     <Provider value={{ products, clear, isInCart, deleteProduct, getQtyProducts, cantidad, addProduct }}>
       {children}
