@@ -26,6 +26,7 @@ const Item = ( {product } ) => {
   return (
     <div className="Cartas" key={codigo}  >
       <Link to={`/detalle/${codigo}`}><img className="FotoProducto" src={foto} alt= {nombre} /></Link>      
+      
       <p className="nombrePrecio"> {nombre} - ${precio} </p>
       <div className='cantidadAgregar'>
 	      <ItemsCount  initial= {1} onAdd= {onAdd}  product= {product} stock = {stock} nombre ={nombre} cantidad ={cantidad} codigo={codigo}></ItemsCount>

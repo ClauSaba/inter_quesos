@@ -10,7 +10,7 @@ import { getDoc, collection, doc } from "firebase/firestore"
 
 
 function ItemDetailContainer({seleccion}){
-	const [product, setProduct] = useState({})
+	const [product, setProduct] = useState([])
 	const [loading, setLoading] = useState(true)
 	
 	const {codigo} = useParams();
@@ -18,9 +18,9 @@ function ItemDetailContainer({seleccion}){
 	useEffect(()=>{
 		const productsCollection = collection(db, "products");
 		const refDoc = doc(productsCollection, codigo)
-		console.log(codigo);
-		getDoc(refDoc)
-				.then((res)=>{ setProduct({
+		console.log(codigo)
+		console.log(refDoc)
+		getDoc(refDoc).then(res=>{ setProduct({
 			id: res.id,
 			...res.data()})
 			console.log(product);
@@ -29,6 +29,7 @@ function ItemDetailContainer({seleccion}){
 		.finally(()=>setLoading(false))
 	},[codigo])
 	
+
 
 	const onAdd = (cantidad, nombre) =>{
 		swal({
