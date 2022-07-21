@@ -22,7 +22,6 @@ function App() {
         <main className='AppMain'>
         <Routes>
             <Route path='/' element= {<ItemListContainer greeting="Bienvenidos a La Europea fromagerie"  /> }/>
-            {/* {<Slider SliderData= {SliderData} />} */}
             <Route path='/category/:tipo' element= {<ItemListContainer seleccion="Aqui está tu selección: " /> }/>
             <Route path='/detalle/:codigo' element= {<ItemDetailContainer seleccion="Aqui está tu selección: " /> }/>
             <Route path='/cart' element= {<Cart/> }/>
