@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Footer from './components/footer/Footer';
 import Cart from "./components/main/Cart"
 import CustomProvider from './context/CartContext';
+import CartFinalizar from './components/main/CartFinalizar';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/category/:tipo' element= {<ItemListContainer seleccion="Aqui está tu selección: " /> }/>
             <Route path='/detalle/:codigo' element= {<ItemDetailContainer seleccion="Aqui está tu selección: " /> }/>
             <Route path='/cart' element= {<Cart/> }/>
+            <Route path='/CartFinalizar' element= {<CartFinalizar/> }/>
         </Routes>
         </main>
         <footer className='AppFooter'>

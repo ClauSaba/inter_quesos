@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect }  from 'react'
-import Item from '../components/main/Item';
 
 
 export const CartContext = createContext();
@@ -42,17 +41,15 @@ const CustomProvider = ({ children }) => {
     if (isInCart(product.codigo)){
       const found = products.find(p => p.codigo === product.codigo)
       const index = products.indexOf(found)
-      console.log(index);
       const aux = [...products]
       aux[index].cantidad += product.cantidad
       setProducts(aux)
-      console.log(aux);
     }else{
       setProducts([...products, product])
     }
     getQtyProducts()
   } 
-  
+
   return (
     <Provider value={{ products, clear, isInCart, deleteProduct, getQtyProducts, cantidad, addProduct }}>
       {children}

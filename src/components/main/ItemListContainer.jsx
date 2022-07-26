@@ -17,7 +17,6 @@ function ItemListContainer({greeting, seleccion}){
 		const q = tipo ?
 		query(productsCollection, where('tipo', '==', tipo ))
 		: productsCollection;
-		console.log(tipo);
 		getDocs(q)
 		.then((res)=>{
 			const listado = res.docs.map(prod => {
@@ -27,7 +26,6 @@ function ItemListContainer({greeting, seleccion}){
 				}
 			})
 			SetProductList(listado)
-			console.log(listado);
 		})
 		.catch("error")
 		.finally(()=>SetLoading(false))

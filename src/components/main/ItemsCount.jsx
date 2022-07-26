@@ -32,7 +32,7 @@ const ItemsCount = ( { nombre, onAdd, initial, stock } ) => {
 	}
 
 	return(
-		btn ? <Link to={"/cart"} element= {<Cart  /> } > <button className='btnFinalizar'> Finalizar </button>  </Link> :
+		btn ? <Link to={"/cart"} element= {<Cart  /> } > <button className='btnFinalizar'> ir al Carrito </button>  </Link> :
 		<div className='cantidadAgregarDetail'>
 			<span className='btnResta' onClick={()=>btnCantidadResta(cantidad===1 ? 0 : -1)}><FontAwesomeIcon icon={faCircleMinus} /></span>
 			<label className='muestraCantidadDetail'>{cantidad}</label>

@@ -58,3 +58,15 @@
     font-size: 88px;
     font-weight: bolder;
 }
+.btnFinalizar{
+    background-color: black;
+    border: gold 2px solid;
+    font: bold;
+    color: gold;
+    width: 150px;
+    height: 50px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+}
