@@ -29,11 +29,7 @@ td{
     gap: 30px;
 }
 
-.btnPagar{
-    width: 70px;
-    background-color: green;
-    color: white;
-}
+
 .btnVaciar{
     width: 70px;
     background-color: red;
@@ -70,3 +66,4 @@ td{
     background-color: transparent;
     font-size: 20px;
 }
+

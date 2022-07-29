@@ -11,9 +11,9 @@ const Footer = () => {
         <h6>--- desarrollado por ClauSaba ---</h6>
       </div>
       <ul className="socialMediaLinks">
-        <li className ="btnFB"><a href="https://facebook.com" rel="noopener" > FB </a></li>
-        <li className ="btnTW"><a href="https://twitter.com" rel="noopener"> TW</a></li>
-        <li className ="btnIG"><a href="https://instagram.com" rel="noopener"> IG </a></li>
+        <li className ="btnRedes"><a href="https://facebook.com" rel="noopener" >FB </a> </li>
+        <li className ="btnRedes"><a href="https://twitter.com" rel="noopener"> TW</a></li>
+        <li className ="btnRedes"><a href="https://instagram.com" rel="noopener"> IG </a></li>
       </ul>
       <p className="telefono"><FontAwesomeIcon icon={faPhone} /> 1234-5678</p>
     </div>

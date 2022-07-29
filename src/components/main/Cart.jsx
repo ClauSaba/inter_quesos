@@ -31,7 +31,7 @@ const Cart = () => {
     <div className="finalizaCompra">
       <h2 className="mensajeTotal"> El total de tu compra es $ {products.reduce((acc, item) => acc + item.precio * item.cantidad ,0) } </h2>
       <Link to = {"/CartFinalizar"} className="btnPagar">Finalizar</Link>
-      <button className="btnVaciar"  onClick={()=>clear()}>Vaciar</button>
+      <a className="btnVaciar"  onClick={()=>clear()}>Vaciar</a>
     </div>  
   </>
   )

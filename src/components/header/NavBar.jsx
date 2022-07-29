@@ -1,8 +1,9 @@
 import "./NavBar.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
-import {faCheese} from "@fortawesome/free-solid-svg-icons"
+import {faCircleChevronDown} from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 const categorias = [
 {
@@ -28,19 +29,33 @@ const categorias = [
 ]
 
 const NavBar = () =>{
+
+  const [muestraMenuTipo, setMuestraMenuTipo] = useState(false)
+  
+  const subMenuTipo = () =>{
+    const cambia =! muestraMenuTipo;
+    setMuestraMenuTipo(cambia)
+  }
+
+
   return(
-    <div id="NavBarBuscador">
-      <div id="BuscadorHeader">
-        <input className="InputBuscador" type="search" name="" id="" />
-        <button className="ImgBuscador"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-      </div>
-      <ul id="MenuPrincipal">
+    <div id="NavBar">
+
+      <div className="ConSubMenus">
+      {muestraMenuTipo ? 
+      <>
+      <h2 className="tituloMenuCategorias" onClick={()=>subMenuTipo()} > Por Tipo <FontAwesomeIcon icon={faCircleChevronDown}  /> </h2>
+      <ul id="subMenu">
         {categorias.map((cat) => {
           return(
-         <Link to={cat.path} key={cat.id}  className="MenuCategorias"> <FontAwesomeIcon icon={faCheese}  /> {cat.name}</Link>
-         )
+          <Link to={cat.path} key={cat.id} onClick={()=>subMenuTipo()} className="MenuCategorias">  {cat.name}</Link>
+          )
         })}       
       </ul>
+      </>
+      :
+      <h2 className="tituloMenuCategorias" onClick={()=>subMenuTipo()}> Por Tipo <FontAwesomeIcon icon={faCircleChevronDown}  /> </h2>}
+      </div>
     </div>
   )
 }

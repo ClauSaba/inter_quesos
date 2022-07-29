@@ -1,36 +1,23 @@
-# Titulo h1
+# E-commmerce "LA EUROPEA"
 
-## Titulo h2
+## por Claudio Sabatini
 
-### titulo h3
-
-los p no hace falta simbolo
-
-para hacer un listado
+### Realizado como proyecto piloto
 
 este proyecto esta construido con libreria
-* react router
-* swal
-* asdf3
+* react router dom
+* sweet alert
+* font awesome
 
 pasos para reproducir
 1. clona el repo
 2. haz un npm i
 3. haz un npm start
 
-para ver el deploy
+**Para ver el [deploy](https://62e4305b707898322cfe2357--sparkling-youtiao-b3df00.netlify.app/)**
 
-
-```destaca texto```
->tambien destaca
-
-para links
-[ver deploy](www.google.com)
-
-**para negrita**
-
-poner imagenes para hacer capturas
+>Gracias por visitar el proyecto!!
 
 ![alt](./public/img/bannerQuesosFrancia.jpg)
-
-ejemplo profe github. marvel guide react native
+![alt](./public/img/bannerQuesosItalia.jpg)
+![alt](./public/img/bannerQuesosSuiza.jpg)

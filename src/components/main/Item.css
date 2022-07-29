@@ -11,6 +11,7 @@
     margin: 13px;
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 .FotoProducto{
     width: 250px;
@@ -58,13 +59,13 @@
     font-size: 88px;
     font-weight: bolder;
 }
-.btnFinalizar{
+.btnFinalizar {
     background-color: black;
-    border: gold 2px solid;
+    border: whitesmoke 2px solid;
     font: bold;
-    color: gold;
+    color: whitesmoke;
     width: 150px;
-    height: 50px;
+    height: 30px;
     font-style: italic;
     font-weight: bold;
     font-family: 'Indie Flower', cursive;

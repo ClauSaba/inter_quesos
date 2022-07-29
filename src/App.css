@@ -1,7 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  
 }
 
 .App{
@@ -15,7 +14,6 @@
   text-align: center;
   max-width: 1400px;
   margin: auto;
-  
 }
 
 .AppHeader{
@@ -24,15 +22,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
   color: white;
+  border-bottom: solid whitesmoke 1px;
 }
 
 .AppMain{
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(40, 40, 40);
   padding: 5vh 0;
   display: flex;
   flex-direction: column;
+  border-bottom: solid whitesmoke 1px;
 }
 
 .greeting{
@@ -41,7 +42,4 @@
   font-family: 'Courier New', Courier, monospace;
   font-style: italic;
   margin: auto;
-  
-  
-
 }

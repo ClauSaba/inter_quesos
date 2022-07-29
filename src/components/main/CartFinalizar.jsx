@@ -8,13 +8,13 @@ import { collection, addDoc, serverTimestamp} from 'firebase/firestore';
 
 const CartFinalizar = () => {
   
-  const {products} = useContext(CartContext)
+  const {products, clear} = useContext(CartContext)
   const [venta, setIDventa] = useState ()
   const [nombre, setNombre] = useState();
   const [apellido, setApellido] = useState();
   const [email, setEmail] = useState();
-  const [entrega, setEntrega] = useState("datos de entrega");
-  
+  const [entrega, setEntrega] = useState();
+  const [mensaje, setMensaje] = useState(false)  
   const cambiarNombre = (e) =>{
     const value = e.target.value;
     setNombre(value);
@@ -33,10 +33,18 @@ const CartFinalizar = () => {
   }
   const importe = products.reduce((acc, item) => acc + item.precio * item.cantidad ,0)
 
-  const Pagar = () =>{
+  function mensajeFinal(){
+    swal({
+      title: `Sr ${nombre}, su pago de $ ${importe} fue realizado`,
+      text: `el id de la compra es:  ${venta}  `,
+      icon: 'success'
+  })
+    clear()
+  }
 
-    const ventasCollection = collection (db, "ventas");
-    addDoc(ventasCollection,{ 
+  const confirmaDatos =  () =>{
+     const ventasCollection = collection (db, "ventas");
+     addDoc(ventasCollection,{ 
       total: importe,
       productos: products,
       nombre: nombre,
@@ -46,13 +54,10 @@ const CartFinalizar = () => {
       date: serverTimestamp()}) 
       .then((result)=>
       setIDventa(result.id))
-      
-        swal({
-          title: `Sr ${nombre}, su pago de $ ${importe} fue realizado`,
-          text: `el id de la compra es:  ${venta}  `,
-          icon: 'success'
-      }) 
-  }
+      .catch("error")
+      setMensaje(true)
+    }
+    
 
   return (
     <div className="Finalizar">
@@ -62,7 +67,10 @@ const CartFinalizar = () => {
 				<input id="email"  name="email" className='campo' placeholder='introduzca su email' value={email} onChange={(e)=>cambiarEmail(e)}  />
 				<input id="entrega"  name="entrega" className='campo'placeholder='observaciones de entrega' value={entrega} onChange={(e)=>cambiarEntrega(e)} />
     </form>
-        <button className="btnPagar" onClick={()=>Pagar()}>Pagar</button>
+    
+    {mensaje ? 
+    <button className="btnMensaje" onClick={()=>mensajeFinal()}>Pagar</button>:
+        <button className="btnConfirma" onClick={()=>confirmaDatos()}>Confirmar</button>}
 		</div>
   )
 }
