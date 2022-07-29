@@ -20,4 +20,4 @@ pasos para reproducir
 
 ![alt](./public/img/bannerQuesosFrancia.jpg)
 ![alt](./public/img/bannerQuesosItalia.jpg)
-![alt](./public/img/bannerQuesosSuiza.jpg)
+![alt](./public/img/bannerQuesosSuizos.jpg)
